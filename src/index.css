@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --calendar-width: calc(51 * (16px + 2px) - 2px);
+}
+
+@layer base {
+    .canvas {
+        @apply absolute top-0 left-0 h-full w-full
+    }
+    .calendar-grid {
+        display: flex;
+        gap: 2px;
+        /* grid-template-columns: repeat(auto-fit, 16px); */
+        width: var(--calendar-width);
+    }
+    .square:hover + div {
+        display: block;
+    }
+}
+
+@layer utilities {
+
+    .calendar-width {
+        width: var(--calendar-width);
+    }
+
+    @keyframes hintIn {
+        from { @apply bottom-[70%] opacity-0 }
+        to { @apply bottom-[100%] opacity-100 }
+    }
+
+    .hint {
+        animation: hintIn .1s forwards;
+        @apply absolute left-[50%] -translate-x-[50%] bottom-full min-w-max z-50 select-none
+    }
+    .hint-content {
+        @apply bg-black rounded px-3 py-[6px] flex flex-col items-center z-20
+    }
+    .hint-pick {
+        @apply border-black border-[7px] w-3 h-3 -translate-y-[7px] rotate-45 mx-auto
+    }
+
+    .spinner {
+        @apply border-blue-500 border-4 rounded-full border-l-transparent animate-spin h-10 w-10
+    }
+}
