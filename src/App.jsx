@@ -1,4 +1,4 @@
-import ContributionsCalendar from "./components/ContributionsCalendar";
+import ContributionCalendar from "./components/ContributionCalendar";
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
         <div className="spinner"></div>
       </div>
       :
-      <ContributionsCalendar data={data} />
+      <ContributionCalendar data={data} />
       }
     </div>
   );

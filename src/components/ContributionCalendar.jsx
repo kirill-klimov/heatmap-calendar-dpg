@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cell from "./Cell";
 import { formatDate, monthNames } from "../utils";
 
-export default function ContributionsCalendar({ data }) {
+export default function ContributionCalendar({ data }) {
 
     const colors = ['0', '1-9', '10-19', '20-29', '30+']; 
     const [months, setMonths] = useState([]);
